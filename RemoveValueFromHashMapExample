@@ -1,0 +1,33 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package learningjava;
+
+import java.util.HashMap;
+
+/**
+ *
+ * @author ardie
+ */
+public class RemoveValueFromHashMapExample {
+    public static void main(String[]args){
+        // create HashMap object 
+        HashMap hm = new HashMap();
+        hm.put("1","One");
+        hm.put("2", "Two");
+        hm.put("3","Three");
+        Object obj = hm.remove("2");
+        System.out.println(obj+" Remove from HashMap");
+        hm.clear();
+        System.out.println("Total key value pairs in HashMap are : "+hm.size());   
+    }
+}
+
+/*
+Output :
+Two Remove from HashMap
+Total key value pairs in HashMap are : 0
+
+
+*/
