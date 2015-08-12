@@ -1,0 +1,132 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package learningjava;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Vector;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+/**
+ *
+ * @author ardie
+ */
+public class CollectionMap {
+
+    public static void main(String[] args) {
+        HashMap hm = new HashMap();
+
+        hm.put("1", "Bandung");
+        hm.put("2", "Jakarta");
+        hm.put("3", "Cianjur");
+        hm.put("4", "Cipanas");
+        Object obj = hm.remove("2");
+        System.out.println(obj + "  sudah di hapus dari hashmap");
+        //hm.clear();
+        System.out.println("Jumlah data pada hashmap adalah " + hm.size());
+        Collection c = hm.values();
+        //  Iterator namaObjek = namaKelompok.iterator(); 
+        //  Iterator adalah sebuah interface yang digunakan untuk looping elemen dalam sebuah kelompok elemen 
+        //  namaKelompok adalah objek yang bisa menyimpan lebih dari satu elemen         
+        Iterator itr = c.iterator();
+        while (itr.hasNext()) {
+            System.out.println(itr.next());
+        }
+        CollectionMap call = new CollectionMap();
+        call.Vektor();
+        call.ArrayList();
+        call.cobaList();
+        System.out.println();
+        call.ContohSet();
+    }
+
+    public void Vektor() {
+        String mhs1 = "Evan Dimas";
+        String mhs2 = "Rafi Murdianto";
+
+        Vector namaMhs = new Vector();
+        namaMhs.addElement(mhs1);
+        namaMhs.addElement(mhs2);
+        // mengambil data dari vector 
+        System.out.println("Nama Mahasiswa 1 : " + namaMhs.elementAt(0));
+        Iterator it = namaMhs.iterator();
+        while (it.hasNext()) {
+            System.out.println(" " + it.next());
+        }
+    }
+
+    public void ArrayList() {
+        ArrayList<String> mhs = new ArrayList<String>();
+        // wajib menambahkan import java.util.ArrayList;
+        mhs.add("Evan Dimas");
+        mhs.add("Maldini Pali");
+        mhs.add("Didier Drogba");
+        System.out.println(mhs.size());
+    }
+    
+    public void cobaList(){
+        List<String> list1 = new ArrayList<String>();
+        list1.add("dani");
+        list1.add("Budi");
+        list1.add("Buaya");
+        list1.add("Andri");
+        list1.add("Yuliana");
+        
+        // tampilkan value list1
+        for(Iterator<String> iterator = list1.iterator(); iterator.hasNext();){
+            String str = (String) iterator.next();
+            System.out.println(str);
+        }
+    }
+    
+    public void MappingDenganFor(){
+        
+    }
+    public void ContohSet(){
+        Set<String> list2 = new HashSet<String>();
+        list2.add("Ardie");
+        list2.add("Budi");
+        list2.add("Rega");
+        list2.add("Reko");
+        list2.add("Tile");
+        list2.add("Syamsi");
+        list2.add("Happy");
+        // tampilkan 
+        for(Iterator<String> iterator = list2.iterator(); iterator.hasNext();){
+            String str2 = (String) iterator.next();
+            System.out.println(str2);
+        }
+        
+    }
+}
+/* 
+output : 
+Jakarta  sudah di hapus dari hashmap
+Jumlah data pada hashmap adalah 3
+Cianjur
+Bandung
+Cipanas
+Nama Mahasiswa 1 : Evan Dimas
+ Evan Dimas
+ Rafi Murdianto
+3
+dani
+Budi
+Buaya
+Andri
+Yuliana
+
+Syamsi
+Happy
+Ardie
+Tile
+Budi
+Reko
+Rega
+*/
