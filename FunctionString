@@ -1,0 +1,75 @@
+
+package learningjava;
+public class FunctionString {
+    public static void main(String[] args) {
+        String str = "abc";
+        char data[]={'a','b','c'};
+        String str1 = new String(data);
+        
+        System.out.println("abc");
+        String cde = "ardie     ";
+        System.out.println("abc : "+cde.trim());
+        String c = "fahmifauzi".substring(2,6);
+        String d = cde.substring(1,2);
+        System.out.println(c);
+        System.out.println(d);
+        
+        String sentence = "Java is best programming language";
+        String substr = sentence.substring(0,12);
+        System.out.println("Substring : "+substr);
+        
+        if(sentence.indexOf("Java") != -1){
+            System.out.println("String contains Java at index : "+sentence.indexOf("Java"));
+        }
+        if(sentence.matches("J.*")){
+            System.out.println("String Starts with J");
+        }
+        sentence = "Do you like Java ME or Java EE";
+        if(sentence.lastIndexOf("Java") != -1){
+            System.out.println("String containts Java lastly at : "+sentence.lastIndexOf("Java"));
+        }
+        
+        String nama1 = "Ardie Jocong";
+        String nama2 = "Ardie Jocong Ardiansyah";
+        if(nama1 == nama2){
+            System.out.println("kedua nama adalah adalah sama");
+        }
+        if(nama1.equals(nama2)){
+            System.out.println("kedua nama adalah adalah sama");
+        }  
+        
+        String temp1 = new String("nama saya ardiansyah");
+        String temp2 = new String("nama saya ardiansyah");
+        boolean hasil = temp1 == temp2;
+        boolean hasil2 = temp1.equals(temp2);
+        System.out.println(hasil);
+        System.out.println(hasil2);
+        
+        String spacewords = "The quick brown for jump over the lazy cat";
+        String[] list = spacewords.split(" ");
+        for(int i=0; i<list.length; i++){
+            System.out.println(i+" "+list[i]);
+        }
+    }
+}
+/*
+abc
+abc : ardie
+hmif
+r
+Substring : Java is best
+String contains Java at index : 0
+String Starts with J
+String containts Java lastly at : 23
+false
+true
+0 The
+1 quick
+2 brown
+3 for
+4 jump
+5 over
+6 the
+7 lazy
+8 cat
+*/
